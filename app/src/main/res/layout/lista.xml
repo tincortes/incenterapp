@@ -18,13 +18,16 @@
                 android:id="@+id/tv1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="170dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="30dp"
                 android:text="codigo"
-                android:textSize="20dp"></TextView>
+                android:textSize="20dp">
+
+            </TextView>
 
             <TextView
                 android:id="@+id/tv2"
-                android:layout_width="157dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:text="nombre"
