@@ -6,18 +6,18 @@ public class Productos {
     private String nombreProducto;
     private String descripcion;
     private String precioCompra;
-    private String precioventa;
+    private String precioVenta;
     private String existencia;
 
     public Productos() {
     }
 
-    public Productos(int codigo, String nombreProducto, String descripcion, String precioCompra, String precioventaenta, String existencia) {
+    public Productos(int codigo, String nombreProducto, String descripcion, String precioCompra, String precioVenta, String existencia) {
         this.codigo = codigo;
         this.nombreProducto = nombreProducto;
         this.descripcion = descripcion;
         this.precioCompra = precioCompra;
-        this.precioventa = precioventa;
+        this.precioVenta = precioVenta;
         this.existencia = existencia;
     }
 
@@ -54,11 +54,11 @@ public class Productos {
     }
 
     public String getPrecioventa() {
-        return precioventa;
+        return precioVenta;
     }
 
-    public void setPrecioventa(String precioventa) {
-        this.precioventa = precioventa;
+    public void setPrecioventa(String precioVenta) {
+        this.precioVenta = precioVenta;
     }
 
     public String getExistencia() {

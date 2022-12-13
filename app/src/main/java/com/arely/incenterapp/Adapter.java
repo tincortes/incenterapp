@@ -9,9 +9,9 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import java.util.List;
 import com.bumptech.glide.Glide;
+
 
 public class Adapter extends RecyclerView.Adapter<Adapter.PlayerViewnHolder>  {
 
@@ -25,7 +25,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.PlayerViewnHolder>  {
 @Override
     public PlayerViewnHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        LayoutInflater inflater=LayoutInflater.from(mCtx);
+        LayoutInflater inflater = LayoutInflater.from(mCtx);
         View view=inflater.inflate(R.layout.lista,null);
 
         return new PlayerViewnHolder(view);
@@ -36,11 +36,11 @@ public class Adapter extends RecyclerView.Adapter<Adapter.PlayerViewnHolder>  {
         Productos productos=productosList.get(position);
             Glide.with(mCtx);
             holder.tv1.setText(productos.getCodigo());
-        holder.tv2.setText(productos.getNombreProducto());
-        holder.tv3.setText(productos.getDescripcion());
-        holder.tv4.setText(productos.getPrecioCompra());
-        holder.tv5.setText(productos.getPrecioventa());
-        holder.tv6.setText(productos.getExistencia());
+            holder.tv2.setText(productos.getNombreProducto());
+            holder.tv3.setText(productos.getDescripcion());
+            holder.tv4.setText(productos.getPrecioCompra());
+            holder.tv5.setText(productos.getPrecioventa());
+            holder.tv6.setText(productos.getExistencia());
     }
 
 

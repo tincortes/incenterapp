@@ -46,19 +46,18 @@ public class MainActivity extends AppCompatActivity {
 
     }
     private  void validarUsuario(String URL){
-        String usuario=edtUsuario.getText().toString().trim();
-        String password=edtPassword.getText().toString().trim();
+        String usuario = edtUsuario.getText().toString().trim();
+        String password = edtPassword.getText().toString().trim();
         StringRequest stringRequest=new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 
-
-    if(!response.isEmpty()){
-          Intent intent=new Intent(getApplicationContext(), ProductosActivity.class);
-        startActivity(intent);
-     }else {
-          Toast.makeText(MainActivity.this, "Usuario 0 contraseña incorrecta", Toast.LENGTH_SHORT).show();
-    }
+                if(!response.isEmpty()){
+                    Intent intent=new Intent(getApplicationContext(), ProductosActivity.class);
+                    startActivity(intent);
+                }else {
+                    Toast.makeText(MainActivity.this, "Usuario 0 contraseña incorrecta", Toast.LENGTH_SHORT).show();
+                }
             }
         }, new Response.ErrorListener() {
             @Override
