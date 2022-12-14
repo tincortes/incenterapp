@@ -7,7 +7,7 @@
     >
 
     <ImageView
-        android:id="@+id/featured_image"
+        android:id="@+id/imgProduct"
         android:layout_width="100dp"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
@@ -16,7 +16,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/backgrounds/scenic"/>
+        tools:srcCompat="@drawable/producto"/>
 
     <TextView
         android:id="@+id/tvName"
@@ -32,7 +32,7 @@
         android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/featured_image"
+        app:layout_constraintStart_toEndOf="@+id/imgProduct"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="@tools:sample/lorem" />
 

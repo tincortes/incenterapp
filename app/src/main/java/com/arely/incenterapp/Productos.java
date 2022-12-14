@@ -9,6 +9,7 @@ public class Productos {
     private String buyPrice;
     private String sellPrice;
     private String inventory;
+//    private String image;
 
     public Productos() {
     }
@@ -21,6 +22,7 @@ public class Productos {
         this.buyPrice = buyPrice;
         this.sellPrice = sellPrice;
         this.inventory = inventory;
+//        this.image = image;
     }
 
     public int getId() {
@@ -64,7 +66,10 @@ public class Productos {
     public String getInventory() {
         return inventory;
     }
-    public void setInventory(String existencia) {
+    public void setInventory(String inventory) {
         this.inventory = inventory;
     }
+
+//    public String getImage() { return image; }
+//    public void setImage(String image) { this.image = image; }
 }
