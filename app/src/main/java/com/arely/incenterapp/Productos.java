@@ -2,70 +2,69 @@ package com.arely.incenterapp;
 
 public class Productos {
 
-    private  int codigo;
-    private String nombreProducto;
-    private String descripcion;
-    private String precioCompra;
-    private String precioVenta;
-    private String existencia;
+    private int id;
+    private int sku;
+    private String name;
+    private String description;
+    private String buyPrice;
+    private String sellPrice;
+    private String inventory;
 
     public Productos() {
     }
 
-    public Productos(int codigo, String nombreProducto, String descripcion, String precioCompra, String precioVenta, String existencia) {
-        this.codigo = codigo;
-        this.nombreProducto = nombreProducto;
-        this.descripcion = descripcion;
-        this.precioCompra = precioCompra;
-        this.precioVenta = precioVenta;
-        this.existencia = existencia;
+    public Productos(int id, int sku, String name, String description, String buyPrice, String sellPrice, String inventory) {
+        this.id = id;
+        this.sku = sku;
+        this.name = name;
+        this.description = description;
+        this.buyPrice = buyPrice;
+        this.sellPrice = sellPrice;
+        this.inventory = inventory;
     }
 
-    public int getCodigo() {
-        return codigo;
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
+    public int getSku() { return sku; }
+    public void setSku(int sku) { this.sku = sku; }
+
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getNombreProducto() {
-        return nombreProducto;
+    public String getDescription() {
+        return description;
+    }
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public void setNombreProducto(String nombreProducto) {
-        this.nombreProducto = nombreProducto;
+    public String getBuyPrice() {
+        return buyPrice;
+    }
+    public void setBuyPrice(String buyPrice) {
+        this.buyPrice = buyPrice;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public String getSellPrice() {
+        return sellPrice;
+    }
+    public void setSellPrice(String sellPrice) {
+        this.sellPrice = sellPrice;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public String getInventory() {
+        return inventory;
     }
-
-    public String getPrecioCompra() {
-        return precioCompra;
-    }
-
-    public void setPrecioCompra(String precioCompra) {
-        this.precioCompra = precioCompra;
-    }
-
-    public String getPrecioventa() {
-        return precioVenta;
-    }
-
-    public void setPrecioventa(String precioVenta) {
-        this.precioVenta = precioVenta;
-    }
-
-    public String getExistencia() {
-        return existencia;
-    }
-
-    public void setExistencia(String existencia) {
-        this.existencia = existencia;
+    public void setInventory(String existencia) {
+        this.inventory = inventory;
     }
 }

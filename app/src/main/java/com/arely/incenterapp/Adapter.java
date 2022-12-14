@@ -13,53 +13,43 @@ import java.util.List;
 import com.bumptech.glide.Glide;
 
 
-public class Adapter extends RecyclerView.Adapter<Adapter.PlayerViewnHolder>  {
+public class Adapter extends RecyclerView.Adapter<Adapter.PlayerViewHolder>  {
 
     private Context mCtx;
-    private List<Productos> productosList;
-    public Adapter(Context mCtx, List<Productos>productosList){
-        this.mCtx=mCtx;
-        this.productosList=productosList;
+    private List<Productos> productsList;
+    public Adapter(Context mCtx, List<Productos>productsList){
+        this.mCtx = mCtx;
+        this.productsList = productsList;
     }
     @NonNull
-@Override
-    public PlayerViewnHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    @Override
+    public PlayerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        LayoutInflater inflater = LayoutInflater.from(mCtx);
-        View view=inflater.inflate(R.layout.lista,null);
-
-        return new PlayerViewnHolder(view);
+        View view = LayoutInflater
+                .from(mCtx)
+                .inflate(R.layout.lista, parent, false);
+        return new PlayerViewHolder(view);
     }
 
-@Override
-    public void onBindViewHolder(@NonNull PlayerViewnHolder holder, int position) {
-        Productos productos=productosList.get(position);
+    @Override
+    public void onBindViewHolder(@NonNull PlayerViewHolder holder, int position) {
+        Productos products = productsList.get(position);
             Glide.with(mCtx);
-            holder.tv1.setText(productos.getCodigo());
-            holder.tv2.setText(productos.getNombreProducto());
-            holder.tv3.setText(productos.getDescripcion());
-            holder.tv4.setText(productos.getPrecioCompra());
-            holder.tv5.setText(productos.getPrecioventa());
-            holder.tv6.setText(productos.getExistencia());
+            holder.tvName.setText(products.getName());
+            holder.tvDescription.setText(products.getDescription());
     }
 
+    @Override
+    public int getItemCount() {return productsList.size();}
 
+    static class PlayerViewHolder extends  RecyclerView.ViewHolder{
+        TextView tvName, tvDescription;
 
-   @Override
-    public int getItemCount() {return productosList.size();}
-
-    static class PlayerViewnHolder extends  RecyclerView.ViewHolder{
-        TextView tv1,tv2,tv3,tv4,tv5,tv6;
-
-        public PlayerViewnHolder(@NonNull View itemView) {
+        public PlayerViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            tv1=itemView.findViewById(R.id.tv1);
-            tv2=itemView.findViewById(R.id.tv2);
-            tv3=itemView.findViewById(R.id.tv3);
-            tv4=itemView.findViewById(R.id.tv4);
-            tv5=itemView.findViewById(R.id.tv5);
-            tv6=itemView.findViewById(R.id.tv6);
+            tvName = itemView.findViewById(R.id.tvName);
+            tvDescription = itemView.findViewById(R.id.tvDescription);
 
         }
     }

@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProductosActivity extends AppCompatActivity {
-    private static String url="https://yessichat.estudiasistemas.com/productos.php";
+    private static String url="https://aureasistemas.com/arely/products.php";
     List<Productos> productosList;
     RecyclerView recyclerView;
 
@@ -31,16 +31,16 @@ public class ProductosActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_productos);
         Log.v("Verbose","Está entrando.");
-        cargargarImagen();
+        loadProducts();
 
-        recyclerView= findViewById(R.id.recy);
+        recyclerView = findViewById(R.id.recy);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         productosList=new ArrayList<>();
 
     }
 
-    private void cargargarImagen() {
+    private void loadProducts() {
         StringRequest stringRequest =new StringRequest(Request.Method.POST,url,
                 new Response.Listener<String>() {
                     @Override
@@ -52,12 +52,13 @@ public class ProductosActivity extends AppCompatActivity {
                                 JSONObject Productos = array.getJSONObject(i);
 
                                 productosList.add(new Productos(
-                                        Productos.getInt("codigo"),
-                                        Productos.getString("nombreProducto"),
-                                        Productos.getString("descripcion"),
-                                        Productos.getString("precioCompra"),
-                                        Productos.getString("precioVenta"),
-                                        Productos.getString("existencia")
+                                        Productos.getInt("id"),
+                                        Productos.getInt("sku"),
+                                        Productos.getString("name"),
+                                        Productos.getString("description"),
+                                        Productos.getString("buyPrice"),
+                                        Productos.getString("sellPrice"),
+                                        Productos.getString("inventory")
                                 ));
                             }
                             Adapter adapter = new Adapter(ProductosActivity.this, productosList);
